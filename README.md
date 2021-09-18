@@ -25,4 +25,4 @@ wget https://aws-codedeploy-ap-south-1.s3.ap-south-1.amazonaws.com/latest/instal
 chmod +x ./install
 sudo ./install auto
 sudo service codedeploy-agent start
-sudo service codedeploy-agent enable
+sudo systemctl enable codedeploy-agent
