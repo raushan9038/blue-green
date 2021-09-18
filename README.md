@@ -2,8 +2,6 @@
 Aws Blue green deployement
 
 # Aws Codedeploy-agent installation on ubuntu 20.04
-#!/bin/bash
-sudo su
 apt-get update -y
 apt-get install -y ruby
 wget https://aws-codedeploy-us-east-1.s3.amazonaws.com/releases/codedeploy-agent_1.0-1.1597_all.deb
@@ -14,3 +12,17 @@ dpkg-deb -b codedeploy-agent_1.0-1.1597_ubuntu20
 dpkg -i codedeploy-agent_1.0-1.1597_ubuntu20.deb
 systemctl start codedeploy-agent
 systemctl enable codedeploy-agent
+
+
+# Aws codedeploy-agent installation script
+
+#!/bin/bash
+sudo apt-get update
+sudo apt-get install ruby
+sudo apt-get install wget
+cd /home/ubuntu
+wget https://aws-codedeploy-ap-south-1.s3.ap-south-1.amazonaws.com/latest/install
+chmod +x ./install
+sudo ./install auto
+sudo service codedeploy-agent start
+sudo service codedeploy-agent enable
