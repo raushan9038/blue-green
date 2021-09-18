@@ -18,6 +18,7 @@ systemctl enable codedeploy-agent
 
 #!/bin/bash
 sudo apt-get update -y
+sudo apt upgrade -y
 sudo apt-get install ruby -y
 sudo apt-get install wget -y
 cd /home/ubuntu
