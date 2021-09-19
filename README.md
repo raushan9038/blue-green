@@ -19,6 +19,9 @@ systemctl enable codedeploy-agent
 #!/bin/bash
 sudo apt-get update -y
 sudo apt upgrade -y
+sudo apt install apache2 -y
+sudo systemctl enable apache2
+sudo rm rf /var/www/html/*
 sudo apt-get install ruby -y
 sudo apt-get install wget -y
 cd /home/ubuntu
